@@ -1,10 +1,12 @@
 import { FavoriteCharacter } from "../components/FavoriteCharacter"
+import { SearchCharacters } from "../components/SearchCharacters"
 
 export const HomePage = () => {
     return (
-    <div>
+    <main className="mainHomePage">
         <div className="mainContainerFavorite">
-            <h1>Most popular Disney Characters</h1>
+            <h1 className="header">Most popular Disney</h1>
+            <h1 className="header">Characters</h1>
             <div className="containerFavoriteTiles">
             {array.map((character)=>{
                 return <FavoriteCharacter name={character.name}films={character.films}tvShows={character.tvShows}imageUrl={character.imageUrl}/>
@@ -12,9 +14,10 @@ export const HomePage = () => {
             
             </div>
         </div>
-        <div>erge</div>
+        <SearchCharacters/>
 
-    </div>)
+    </main>)
+    
 }
 
 const array = [

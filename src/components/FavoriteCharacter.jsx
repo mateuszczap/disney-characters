@@ -14,12 +14,7 @@ export const FavoriteCharacter = (props) => {
                         <div>Films:{props.films.length}</div>
                         <div>TV Shows:{props.tvShows.length}</div>
                     </div>
-          
-                    {/* character name */}
-                    {/* star  */}
-                    {/* films - ilosc*/}
-                    {/* Tv shows - ilość */}
                 </div>
             
             )
-}
+};
