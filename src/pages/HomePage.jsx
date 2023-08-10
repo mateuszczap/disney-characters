@@ -1,5 +1,7 @@
 import { FavoriteCharacter } from "../components/FavoriteCharacter"
 import { SearchCharacters } from "../components/SearchCharacters"
+import { CharacterList } from "../components/CharacterList" 
+import { MyFavorite } from "../components/MyFavorite"
 
 export const HomePage = () => {
     return (
@@ -15,6 +17,10 @@ export const HomePage = () => {
             </div>
         </div>
         <SearchCharacters/>
+        <div>
+            <CharacterList list={array}/>
+            <MyFavorite list={array}/>
+        </div>
 
     </main>)
     
