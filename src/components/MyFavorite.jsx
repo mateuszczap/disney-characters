@@ -1,10 +1,10 @@
 export const MyFavorite = (props) => {
     return (
-        <div>
+        <div className="favoriteList">
             <h2>My Favorite, star</h2>
             <div>{props.list.map((character) => {
                 return (
-                    character.name
+                    <div>{character.name}</div>
                 )
             })}</div>
         </div>

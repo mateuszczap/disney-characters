@@ -19,6 +19,8 @@ export const HomePage = () => {
         <SearchCharacters/>
         <div>
             <CharacterList list={array}/>
+        </div>
+        <div>
             <MyFavorite list={array}/>
         </div>
 
