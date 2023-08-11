@@ -115,6 +115,14 @@ body {
   display: grid;
   grid-template-columns: 30% 30% 30% 10%;
   justify-items: center;
+  place-items: center;
+}
+.characterListImg {
+  max-width: 150px;
+  min-width: 150px;
+  max-height: 150px;
+  min-height: 150px;
+  border-radius: 85px;
 }
 .favoriteList {
   display: flex;
