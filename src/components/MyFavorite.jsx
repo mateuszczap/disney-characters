@@ -1,10 +1,15 @@
+import { Star } from "./Star";
 export const MyFavorite = (props) => {
     return (
         <div className="favoriteList">
-            <h2>My Favorite, star</h2>
+            <div className="myFavoriteAndStar">
+                <h2>My Favorite</h2>
+                <div className="starIcon"><Star isFilled /></div>
+            </div>
+            <h4>Name</h4>
             <div>{props.list.map((character) => {
                 return (
-                    <div>{character.name}</div>
+                    <div key={character._id}>{character.name}</div>
                 )
             })}</div>
         </div>

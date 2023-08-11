@@ -1,35 +1,52 @@
-import { FavoriteCharacter } from "../components/FavoriteCharacter"
-import { SearchCharacters } from "../components/SearchCharacters"
-import { CharacterList } from "../components/CharacterList" 
-import { MyFavorite } from "../components/MyFavorite"
+import { FavoriteCharacter } from "../components/FavoriteCharacter";
+import { SearchCharacters } from "../components/SearchCharacters";
+import { CharacterList } from "../components/CharacterList";
+import { MyFavorite } from "../components/MyFavorite";
+import { useState } from "react";
+import useSWR from "swr";
 
+const fetcher = (url) => fetch(url).then((res) => res.json());
 export const HomePage = () => {
-    return (
+  const [name, setName] = useState();
+  const { data, isLoading } = useSWR(
+    `https://api.disneyapi.dev/character?pageSize=100&name=${name}`,
+    fetcher
+  );
+  // console.log(data?.data)
+  const [favoriteCharacters, setFavoriteCharacters] = useState([]);
+  return (
     <main className="mainHomePage">
-        <div className="mainContainerFavorite">
-            <h1 className="header">Most popular Disney</h1>
-            <h1 className="header">Characters</h1>
-            <div className="containerFavoriteTiles">
-            {array.map((character)=>{
-                return <FavoriteCharacter name={character.name}films={character.films}tvShows={character.tvShows}imageUrl={character.imageUrl}/>
-            })}
-            
-            </div>
+      <div className="mainContainerFavorite">
+        <h1 className="header">Most popular Disney</h1>
+        <h1 className="header">Characters</h1>
+        <div className="containerFavoriteTiles">
+          {data?.data.sort((prev, next) => {
+    if (prev.films.length < next.films.length) {
+      return -1;
+    }
+    return 0;
+  }).map((character) => {
+            return <FavoriteCharacter key={character._id} name={character.name} films={character.films} tvShows={character.tvShows} imageUrl={character.imageUrl} />
+          })}
+
         </div>
-        <SearchCharacters/>
-        <div>
-            <CharacterList list={array}/>
-        </div>
-        <div>
-            <MyFavorite list={array}/>
-        </div>
+      </div>
+      <SearchCharacters setName={setName} />
+      <div className="tutaj rozdziel kontenery">
+
+        <CharacterList list={data?.data || []} favoriteCharacters={favoriteCharacters} setFavoriteCharacters={setFavoriteCharacters} />
+
+
+        <MyFavorite list={favoriteCharacters} />
+
+      </div>
 
     </main>)
-    
+
 }
 
 const array = [
-{
+  {
     "_id": 6,
     "films": [],
     "shortFilms": [],
