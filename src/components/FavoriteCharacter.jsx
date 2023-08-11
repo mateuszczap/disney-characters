@@ -1,5 +1,5 @@
 export const FavoriteCharacter = (props) => {
-    // console.log(props.imageUrl)
+    
     return (
 
         <div className="favoriteTile">
@@ -8,7 +8,7 @@ export const FavoriteCharacter = (props) => {
             </div>
             <div className="mainTile">
                 <div className="characterNameTile">
-                    <div>{props.name}</div>
+                    <div className="name">{props.name}</div>
                     <div>star</div>
                 </div>
                 <div>Films:{props.films.length}</div>

@@ -25,8 +25,14 @@ export const HomePage = () => {
       return -1;
     }
     return 0;
-  }).map((character) => {
-            return <FavoriteCharacter key={character._id} name={character.name} films={character.films} tvShows={character.tvShows} imageUrl={character.imageUrl} />
+    
+  }).slice(0, 3).map((character) => {
+            return <FavoriteCharacter 
+            key={character._id} 
+            name={character.name} 
+            films={character.films} 
+            tvShows={character.tvShows} 
+            imageUrl={character.imageUrl} />
           })}
 
         </div>
@@ -34,7 +40,7 @@ export const HomePage = () => {
       <SearchCharacters setName={setName} />
       <div className="tutaj rozdziel kontenery">
 
-        <CharacterList list={data?.data || []} favoriteCharacters={favoriteCharacters} setFavoriteCharacters={setFavoriteCharacters} />
+        <CharacterList list={data?.data || []} favoriteCharacters={favoriteCharacters} setFavoriteCharacters={setFavoriteCharacters}  />
 
 
         <MyFavorite list={favoriteCharacters} />

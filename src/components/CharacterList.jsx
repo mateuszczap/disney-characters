@@ -14,7 +14,7 @@ return (
         return (
             <div className="characterListTitles" key={character._id}>
                 <div>
-                    {/* <img src={props.imageUrl} className="favoriteTileImg" /> */}
+                    <img src={props.imageUrl} className="favoriteTileImg" />
                 </div>
                 <div>{character.name}</div>
                 <div>{character.films.length}</div>
