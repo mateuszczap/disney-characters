@@ -38,13 +38,12 @@ export const HomePage = () => {
         </div>
       </div>
       <SearchCharacters setName={setName} />
-      <div className="tutaj rozdziel kontenery">
+      <div className="charactersAndFavorite">
 
         <CharacterList list={data?.data || []} favoriteCharacters={favoriteCharacters} setFavoriteCharacters={setFavoriteCharacters}  />
 
-
         <MyFavorite list={favoriteCharacters} />
-
+        
       </div>
 
     </main>)
