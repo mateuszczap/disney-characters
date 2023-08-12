@@ -4,7 +4,7 @@ import { CharacterList } from "../components/CharacterList";
 import { MyFavorite } from "../components/MyFavorite";
 import { useState } from "react";
 import useSWR from "swr";
-
+import { Star } from "../components/Star";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 export const HomePage = () => {
@@ -17,6 +17,10 @@ export const HomePage = () => {
   const [favoriteCharacters, setFavoriteCharacters] = useState([]);
   return (
     <main className="mainHomePage">
+      <div className="headerContainer">
+        <div>DISNEY</div>
+        <div className="headerMyFavorite">MY FAVORITE<Star isFilled /></div>
+      </div>
       <div className="mainContainerFavorite">
         <h1 className="header">Most popular Disney</h1>
         <h1 className="header">Characters</h1>
