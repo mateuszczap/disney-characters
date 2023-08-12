@@ -5,9 +5,10 @@ import { MyFavorite } from "../components/MyFavorite";
 import { useState } from "react";
 import useSWR from "swr";
 
+
 const fetcher = (url) => fetch(url).then((res) => res.json());
 export const HomePage = () => {
-  const [name, setName] = useState();
+  const [name, setName] = useState("");
   const { data, isLoading } = useSWR(
     `https://api.disneyapi.dev/character?pageSize=100&name=${name}`,
     fetcher

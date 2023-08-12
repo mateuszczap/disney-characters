@@ -1,4 +1,6 @@
 import { Star } from "./Star";
+import { TvIcon } from "../components/TvIcon";
+
 export const CharacterList = (props) => {
     return (
         <div className="characterList">
@@ -16,7 +18,7 @@ export const CharacterList = (props) => {
                         <div>
                             <img src={character.imageUrl} className="characterListImg" />
                         </div>
-                        <div>{character.name}</div>
+                        <div className="tvIconContainer">{character.name}{character.tvShows.length ? <TvIcon tvShows={character.tvShows} id={character._id}/> : undefined}</div>
                         <div>{character.films.length}</div>
                         <div onClick={() => {
 
