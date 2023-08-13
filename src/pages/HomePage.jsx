@@ -18,7 +18,7 @@ export const HomePage = () => {
   return (
     <main className="mainHomePage">
       <div className="headerContainer">
-        <div>DISNEY</div>
+        <h2>DISNEY</h2>
         <div className="headerMyFavorite">MY FAVORITE<Star isFilled /></div>
       </div>
       <div className="mainContainerFavorite">
