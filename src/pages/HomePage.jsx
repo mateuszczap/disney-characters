@@ -18,7 +18,7 @@ export const HomePage = () => {
   return (
     <main className="mainHomePage">
       <div className="headerContainer">
-        <h2>DISNEY</h2>
+        <img src="/Walt Disney mickey logo.png"/>
         <div className="headerMyFavorite">MY FAVORITE<Star isFilled /></div>
       </div>
       <div className="mainContainerFavorite">
