@@ -15,8 +15,6 @@ export const HomePage = (props) => {
     `https://api.disneyapi.dev/character?pageSize=100&name=${name}`,
     fetcher
   );
-  // console.log(data?.data)
-  
   return (
     <main className="mainHomePage">
       <div className="headerContainer">
@@ -53,6 +51,11 @@ export const HomePage = (props) => {
 
         <MyFavorite list={props.favoriteCharacters} />
         
+      </div>
+      <div className="footerButton">
+        <button className="button" onClick={() => {
+          window.open("https://github.com/mateuszczap", '_blank')
+        }}>Go to My GitHub</button>
       </div>
 
     </main>)

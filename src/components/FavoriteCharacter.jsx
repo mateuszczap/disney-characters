@@ -9,7 +9,7 @@ export const FavoriteCharacter = (props) => {
             <div className="mainTile">
                 <div className="characterNameTile">
                     <div className="name">{props.name}</div>
-                    <div>star</div>
+                    {/* <div>star</div> */}
                 </div>
                 <div>Films:{props.films.length}</div>
                 <div>TV Shows:{props.tvShows.length}</div>
