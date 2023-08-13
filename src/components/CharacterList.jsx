@@ -11,7 +11,7 @@ export const CharacterList = (props) => {
                 <h4>Films count</h4>
                 <h4>Favorite</h4>
             </div>
-            <div>{props.list.map((character) => {
+            <div>{props.list?.map((character) => {
                 console.log(props.imageUrl)
                 return (
                     <div className="characterListTitles" key={character._id}>

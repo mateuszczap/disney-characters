@@ -7,7 +7,7 @@ export const MyFavorite = (props) => {
                 <div className="starIcon"><Star isFilled /></div>
             </div>
             <h4>Name</h4>
-            <div>{props.list.map((character) => {
+            <div>{props.list?.map((character) => {
                 return (
                     <div key={character._id}>{character.name}</div>
                 )

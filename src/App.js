@@ -1,24 +1,22 @@
 import React from 'react';
 import {MyFavoritesPage} from './pages/MyFavoritesPage';
 import './App.css';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom';
 import {HomePage} from './pages/HomePage';
+import { useState } from 'react';
 
 // localhost:3000     - disneycharacter 
 // localhost:3000/favorites   - ulubione które uzytkownik zaznaczył
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element:<HomePage/>,
-  },
-  {
-    path: "/favorites",
-    element: <MyFavoritesPage />,
-  },
-]);
+
 function App() {
+  const [favoriteCharacters, setFavoriteCharacters] = useState([]);
   return (
-    <RouterProvider router={router} />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/"  element={<HomePage favoriteCharacters={favoriteCharacters} setFavoriteCharacters={setFavoriteCharacters}/>}/>
+        <Route path="/my-favorite-page"  element={<MyFavoritesPage favoriteCharacters={favoriteCharacters} setFavoriteCharacters={setFavoriteCharacters}/>}/> 
+      </Routes>
+    </BrowserRouter>
   );
 }
 
